@@ -16,4 +16,6 @@ This repo contains some R scripts that I use to tweak PDF files.
 
 ## Script
 
-* add-head-to-pdf.R: Add a customized header (the file name) to the PDF files
+* [add-head-to-pdf.R](add-head-to-pdf.R): Add a customized header (the file name) to the PDF files
+* [add-head-to-pdf-with-some-landscape.Rnw](add-head-to-pdf-with-some-landscape.Rnw): Rnw file that allows you to add header to landscape PDF files.
+* [multiple-pdfs-to-one.R](multiple-pdfs-to-one.R): Merge multiple PDF files to one using Ghostscript. 
