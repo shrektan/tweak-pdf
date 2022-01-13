@@ -4,3 +4,8 @@
 .Ruserdata
 input
 output
+*.aux
+*.tex
+*.out
+*.log
+*.pdf
