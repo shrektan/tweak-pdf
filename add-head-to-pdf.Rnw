@@ -31,18 +31,6 @@
 \renewcommand{\footrulewidth}{0.0pt}
 % \renewcommand{\headsep}{10in}
 \setlength{\headwidth}{\textwidth}
-% \fancyhead[L]{
-% \parbox{0.49\textwidth}{
-% \fontsize{12}{16} \kaishu \Sexpr{title}}}
-% % \fancyhead[R]{
-% % \parbox{0.50\textwidth}{
-% % \raggedleft \includegraphics[
-% % height=0.5in,keepaspectratio=true]{\Sexpr{GCAMCPUB::logo_path("full_white_bg")}}}
-% % }
-% \fancyfoot[LF]{\kaishu 仅限公司内部使用}
-% \cfoot{}
-% \rfoot{-\thepage-}
-% \pagestyle{fancy}
 
 \pagestyle{fancy}
 \fancyhead[C]{normal pages}
