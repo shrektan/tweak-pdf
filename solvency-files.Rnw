@@ -1,0 +1,83 @@
+\documentclass[a4paper, fancyhdr,cap]{ctexart}
+\usepackage[myheadings]{fullpage}
+\usepackage{colortbl}
+\usepackage{color}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{pdfpages}
+\usepackage{array}
+\usepackage[norule]{footmisc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[pdfstartview=FitH, bookmarks=true, pdfpagelayout = OneColumn, bookmarksopen = true, bookmarksnumbered = false, CJKbookmarks=true, colorlinks=true]{hyperref}
+\usepackage{pdflscape}
+\renewcommand*\rmdefault{ppl}
+% \CTEXsetup[
+% number={\chinese{section}},
+% format={\zihao{3}\kaishu\raggedright},
+% beforeskip={10pt},afterskip={10pt}]{section}
+% \CTEXsetup[
+% number={\arabic{subsection}},
+% format={\zihao{4}\kaishu},
+% beforeskip={15pt},afterskip={5pt}]{subsection}
+
+% \renewcommand{\footnotesize}{\fontsize{11}{13}\kaishu}
+
+\addtolength{\voffset}{-0.6in}
+\addtolength{\textheight}{1.8in}
+% \addtolength{\marginparwidth}{-0.5in}
+\renewcommand{\headheight}{0.2in}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.0pt}
+% \renewcommand{\headsep}{10in}
+\setlength{\headwidth}{\textwidth}
+% \fancyhead[L]{
+% \parbox{0.49\textwidth}{
+% \fontsize{12}{16} \kaishu \Sexpr{title}}}
+% % \fancyhead[R]{
+% % \parbox{0.50\textwidth}{
+% % \raggedleft \includegraphics[
+% % height=0.5in,keepaspectratio=true]{\Sexpr{GCAMCPUB::logo_path("full_white_bg")}}}
+% % }
+% \fancyfoot[LF]{\kaishu 仅限公司内部使用}
+% \cfoot{}
+% \rfoot{-\thepage-}
+% \pagestyle{fancy}
+
+\pagestyle{fancy}
+\fancyhead[C]{normal pages}
+
+\fancypagestyle{pdfpages}{
+  \fancyhf{}
+  \fancyhead[L]{\pdfpagesheaderleft}
+  \fancyhead[C]{\pdfpagesheadercenter}
+  \fancyhead[R]{\pdfpagesheaderright}
+}
+\newcommand*\pdfpagesheaderleft{}
+\newcommand*\pdfpagesheadercenter{}
+\newcommand*\pdfpagesheaderright{}
+
+\newcommand{\setlayout}[3]{\thispagestyle{pdfpages}%
+  \gdef\pdfpagesheaderleft{#1}%
+  \gdef\pdfpagesheadercenter{#2}%
+  \gdef\pdfpagesheaderright{#3}%
+}
+
+
+\renewcommand*{\familydefault}{\sfdefault} % set the default font to arial-like, instead of time new rome like.
+
+\begin{document}
+
+
+<<mergepdf,results='asis',echo=FALSE>>=
+cmd <- r"(
+\includepdf[pages=-,
+  pagecommand=\setlayout{\fangsong %s}{}{},
+  width=1.4\textwidth,height=1.22\textheight,keepaspectratio,offset=0.0in -0.7in
+]{%s}
+)"
+
+cat(sprintf(cmd, title, normalizePath(file, winslash = "/")))
+@
+\end{document}
+
