@@ -2,8 +2,10 @@ input_folder <- "input"
 output_folder <- "output"
 pdfs <- list.files(input_folder, pattern = "[.]pdf$", full.names = TRUE)
 # file.rename(
-#   pdfs, 
-#   gsub("((?<=附件)\\d{1}：)", "0\\1", pdfs, perl = TRUE)
+#   file.path(pdfs),
+#   file.path(
+#     gsub("((?<=附件)\\d{1}：)|((?<=第)\\d{1}(?=号))", "0\\1\\2", pdfs, perl = TRUE)
+#   )
 # )
 output <- file.path(output_folder, paste0("output", ".pdf"))
 

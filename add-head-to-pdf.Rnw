@@ -61,7 +61,7 @@
 cmd <- r"(
 \includepdf[pages=-,
   pagecommand=\setlayout{\fangsong %s}{}{},
-  width=1.4\textwidth,height=1.22\textheight,keepaspectratio,offset=0.0in -0.7in
+  width=1.3\textwidth,height=1.2\textheight,keepaspectratio,offset=0.0in -0.5in
 ]{%s}
 )"
 
