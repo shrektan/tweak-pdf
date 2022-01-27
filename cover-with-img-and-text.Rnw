@@ -1,0 +1,18 @@
+\documentclass[a4paper,fancyhdr,cap]{ctexart}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{pdfpages}
+\usepackage{fontspec} 
+\usepackage{tikz}
+\setCJKmainfont{Microsoft YaHei}
+\setmainfont{Arial}
+\begin{document}
+\begin{titlepage}
+\includepdf[width=\paperwidth,height=\paperheight,pagecommand={
+\zihao{1}
+\begin{tikzpicture}[remember picture, overlay]
+  \node at (5.5em, -18cm) {\textcolor{white}{XXXX委托资产投资月报}};
+  \node at (8.5em, -19.5cm) {\textcolor{white}{\Sexpr{format(ymd::eop$lm(), "%Y年%m月")}}};
+\end{tikzpicture}
+}]{input/cover-template.pdf}
+\end{titlepage}
+\end{document}
